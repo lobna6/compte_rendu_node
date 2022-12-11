@@ -1,0 +1,40 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<h1>Liste des produits - Examen NodeJs</h1>
+	<table>
+		<tr>
+			<th>libelle</th>
+			<th>prix</th>
+			<th>description</th>
+			<th>quantite</th>
+			<th>stock</th>
+			<th>Supprimer</th>
+			<th>Modifier</th>
+		</tr>
+		{% for product in products %}
+			<tr>
+				<td>{{ product.libelle }}</td>
+				<td>{{ product.prix}}</td>
+				<td>{{ product.description}}</td>
+				<td>{{ product.quantite}}</td>
+				{% if  product.quantite > 0 %}
+					<td>
+						dans le stock
+					</td>
+
+				{% else %}
+					<td>
+						rupture de stock
+					</td>
+				{% endif %}
+				<td>
+					<a href="/product/delete/{{ product.id }}">Delete</a>
+				</td>
+				<td>
+					<a href="/product/modifier/{{ product.id }}">update</a>
+
+				</td>
+			</tr>
+		{% endfor %}
+	{% endblock %}

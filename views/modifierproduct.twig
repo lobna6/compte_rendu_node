@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<h1>modifier un produit - Examen NodeJs</h1>
+	<form method="post" action="http://localhost:3000/product/modPandrout/{{product.id}}">
+		libelle:<input type="text" name="libelle" value="{{product.libelle}}" placeholder="libelle..."/>
+		<br/>
+		prix:<input type="number" name="prix" value="{{product.prix}}" placeholder="prix..."/>
+		<br/>
+		description:<input type="text" name="description" value="{{product.description}}" placeholder="description..."/>
+		<br/>
+		quantite:<input type="number" name="quantite" value="{{product.quantite}}" placeholder="quantite..."/>
+		<br/>
+		<input type="submit" value="modifier un produit"/>
+	</form>
+{% endblock %}

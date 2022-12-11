@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<h1>Ajouter un produit - Examen NodeJs</h1>
+	<form method="post" action="http://localhost:3000/product/addPandrout">
+		libelle:<input type="text" name="libelle" placeholder="libelle..."/>
+		<br/>
+		prix:<input type="number" name="prix" placeholder="prix..."/>
+		<br/>
+		description:<input type="text" name="description" placeholder="description..."/>
+		<br/>
+		quantite:<input type="number" name="quantite" placeholder="quantite..."/>
+		<br/>
+		<input type="submit" value="ajouter un produit"/>
+	</form>
+{% endblock %}
